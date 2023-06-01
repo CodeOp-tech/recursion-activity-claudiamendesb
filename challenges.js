@@ -38,7 +38,7 @@ function createStars(l) {
   }
 
   // recursive case
-  return "*" + createStars(l - 1); //(*+4*)
+  return "*" + createStars(l - 1); //(* + 4*)
 }
 console.log(createStars(5));
 console.log(createStars(0));
@@ -55,17 +55,18 @@ console.log(addUpTo(2)); // 3 (1 + 2)
 console.log(addUpTo(3)); // 6 (1 + 2 + 3)
 console.log(addUpTo(100)); // 5050 (1 + 2 + ... + 99 + 100)
 ------------------*/
-
+/*
 function addUpTo(n) {
   if (n === 1){
   return 1;// base case
   }
-  return n + addUpTo(n + n);// recursive case
+  return n + addUpTo(n - 1);// recursive case
 }
 console.log(addUpTo(1)); // 1
 console.log(addUpTo(2)); // 3 (1 + 2)
 console.log(addUpTo(3)); // 6 (1 + 2 + 3)
 console.log(addUpTo(100)); // 5050 (1 + 2 + ... + 99 + 100)
+*/
 /*------------------
 4)
 Create a recursive function that
@@ -77,12 +78,16 @@ items from the array as you go.
 Test case:
 console.log(sum([1, 2, 3, 4, 5, 6])); // 21
 ------------------*/
-
+/*
 function sum(arr) {
-  // base case
+   if (arr.length === 0) {
+    return 0;
+   }// base case
   // recursive case
+  return arr.pop() + sum(arr); //pop function removes the last element of the array and return it to the som recursion
 }
-
+console.log(sum([1, 2, 3, 4, 5, 6])); // 21
+*/
 /*------------------
 5)
 Solve Fibonnaci using recursion.
@@ -102,12 +107,19 @@ console.log(fib(2)); // 2
 console.log(fib(3)); // 3
 console.log(fib(7)); // 21
 ------------------*/
-
+/*
 function fib(n) {
-  // base case
-  // recursive case
+  if (n === 0 || n===1) {
+  return 1;// base case
+  }
+  return fib(n - 1) + fib (n -2);// recursive case
 }
-
+console.log(fib(0)); // 1
+console.log(fib(1)); // 1
+console.log(fib(2)); // 2
+console.log(fib(3)); // 3
+console.log(fib(7)); // 21
+*/
 /*------------------
 6)
 Create a function that takes a grid
