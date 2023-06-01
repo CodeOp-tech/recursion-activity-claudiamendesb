@@ -7,12 +7,18 @@ Test case:
 console.log(factorial(3)); // 6
 console.log(factorial(7)); // 5040
 ------------------*/
-
+/*
 function factorial(x) {
-  // base case
-  // recursive case
+  // base case  takes an input x. If x is 0 or 1, it returns 1
+   if(x === 0 || x === 1) {
+    return 1;
+  }
+  return x * factorial(x - 1);
+  // recursive case recursively calls the factorial function with x - 1 
 }
-
+console.log(factorial(3)); // 6  (3*2)
+console.log(factorial(7)); // 5040 (7*6*5*4*3*2)
+*/
 /*------------------
 2)
 Create a string of stars
@@ -24,12 +30,19 @@ Test case:
 console.log(createStars(5)); // "*****"
 console.log(createStars(0)); // ""
 ------------------*/
-
+/*
 function createStars(l) {
   // base case
-  // recursive case
-}
+  if (l === 0) {
+    return "";
+  }
 
+  // recursive case
+  return "*" + createStars(l - 1); //(*+4*)
+}
+console.log(createStars(5));
+console.log(createStars(0));
+*/
 /*------------------
 3)
 Create a recursive function called
@@ -44,10 +57,15 @@ console.log(addUpTo(100)); // 5050 (1 + 2 + ... + 99 + 100)
 ------------------*/
 
 function addUpTo(n) {
-  // base case
-  // recursive case
+  if (n === 1){
+  return 1;// base case
+  }
+  return n + addUpTo(n + n);// recursive case
 }
-
+console.log(addUpTo(1)); // 1
+console.log(addUpTo(2)); // 3 (1 + 2)
+console.log(addUpTo(3)); // 6 (1 + 2 + 3)
+console.log(addUpTo(100)); // 5050 (1 + 2 + ... + 99 + 100)
 /*------------------
 4)
 Create a recursive function that
